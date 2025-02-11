@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi_modal_image_retrieval_system"
+version = "3.11"
+description = "Standard Bank Assessment"
+readme = "README.rst"
+authors = [
+  {name = "Shaun Mavunda", email = "shaunm28@icloud.com"}
+]
+maintainers = [
+  {name = "Shaun Mavunda", email = "shaunm28@icloud.com"}
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+  
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/ShaunPseudocode/multi_modal_image_retrieval_system/issues"
+changelog = "https://github.com/ShaunPseudocode/multi_modal_image_retrieval_system/blob/master/changelog.md"
+homepage = "https://github.com/ShaunPseudocode/multi_modal_image_retrieval_system"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
